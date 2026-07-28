@@ -1,0 +1,161 @@
+<svg width="1280" height="740" viewBox="0 0 1280 740" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" stop-color="#1a0933"/>
+    <stop offset="55%" stop-color="#2E0854"/>
+    <stop offset="100%" stop-color="#0D0221"/>
+  </linearGradient>
+  <linearGradient id="nameGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+    <stop offset="0%" stop-color="#EC4899"/>
+    <stop offset="100%" stop-color="#8B5CF6">
+      <animate attributeName="offset" values="1;0.4;1" dur="4s" repeatCount="indefinite"/>
+    </stop>
+  </linearGradient>
+  <radialGradient id="avatarGlow" cx="50%" cy="50%" r="50%">
+    <stop offset="70%" stop-color="#8B5CF6" stop-opacity="0"/>
+    <stop offset="100%" stop-color="#EC4899" stop-opacity="0.55"/>
+  </radialGradient>
+  <clipPath id="rounded">
+    <rect width="1280" height="740" rx="28" ry="28"/>
+  </clipPath>
+  <clipPath id="avatarClip">
+    <circle cx="1090" cy="150" r="90"/>
+  </clipPath>
+  <style>
+    .mono { font-family: 'Courier New', monospace; }
+    .script { font-family: 'Brush Script MT', 'Segoe Script', cursive; }
+    .sans { font-family: 'Trebuchet MS', Verdana, sans-serif; }
+    .pill { opacity: 0; }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(10px);} to { opacity: 1; transform: translateY(0);} }
+    .p1 { animation: fadeUp .6s ease forwards; animation-delay: 2.4s; }
+    .p2 { animation: fadeUp .6s ease forwards; animation-delay: 2.7s; }
+    .p3 { animation: fadeUp .6s ease forwards; animation-delay: 3.0s; }
+    .p4 { animation: fadeUp .6s ease forwards; animation-delay: 3.3s; }
+    .p5 { animation: fadeUp .6s ease forwards; animation-delay: 3.6s; }
+    .p6 { animation: fadeUp .6s ease forwards; animation-delay: 3.9s; }
+  </style>
+</defs>
+
+<g clip-path="url(#rounded)">
+  <rect width="1280" height="740" fill="url(#bg)"/>
+
+  <!-- floating particles -->
+  <g fill="#EC4899" opacity="0.6">
+    <circle cx="120" cy="620" r="3"><animate attributeName="cy" values="620;560;620" dur="6s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.2;0.9;0.2" dur="6s" repeatCount="indefinite"/></circle>
+    <circle cx="260" cy="680" r="2"><animate attributeName="cy" values="680;600;680" dur="7s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.2;0.8;0.2" dur="7s" repeatCount="indefinite"/></circle>
+    <circle cx="420" cy="650" r="4" fill="#8B5CF6"><animate attributeName="cy" values="650;570;650" dur="5.5s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.2;0.9;0.2" dur="5.5s" repeatCount="indefinite"/></circle>
+  </g>
+  <!-- twinkling sparkles + hearts -->
+  <g class="sans" font-size="18" fill="#F0ABFC">
+    <text x="60" y="90"><animate attributeName="opacity" values="0;1;0" dur="3s" repeatCount="indefinite"/>✦</text>
+    <text x="1150" y="500"><animate attributeName="opacity" values="0;1;0" dur="2.4s" begin="0.6s" repeatCount="indefinite"/>♥</text>
+    <text x="980" y="620"><animate attributeName="opacity" values="0;1;0" dur="2.8s" begin="1.1s" repeatCount="indefinite"/>✦</text>
+    <text x="200" y="400"><animate attributeName="opacity" values="0;1;0" dur="3.2s" begin="0.4s" repeatCount="indefinite"/>♥</text>
+  </g>
+
+  <!-- pulsing ambient orbs -->
+  <circle cx="1150" cy="620" r="140" fill="#8B5CF6" opacity="0.08"><animate attributeName="r" values="140;170;140" dur="6s" repeatCount="indefinite"/></circle>
+  <circle cx="100" cy="120" r="100" fill="#EC4899" opacity="0.08"><animate attributeName="r" values="100;130;100" dur="7s" repeatCount="indefinite"/></circle>
+
+  <!-- ============ AVATAR SLOT ============ -->
+  <circle cx="1090" cy="150" r="100" fill="url(#avatarGlow)"/>
+  <circle cx="1090" cy="150" r="90" fill="#3B1264" stroke="#EC4899" stroke-width="3">
+    <animate attributeName="stroke-opacity" values="0.5;1;0.5" dur="3s" repeatCount="indefinite"/>
+  </circle>
+  <g clip-path="url(#avatarClip)">
+    <!-- REPLACE this rect with: <image href="data:image/png;base64,YOUR_BASE64" x="1000" y="60" width="180" height="180"/> -->
+    <rect x="1000" y="60" width="180" height="180" fill="#4C1D95"/>
+    <text x="1090" y="158" text-anchor="middle" class="sans" font-size="14" fill="#E9D5FF">your avatar</text>
+  </g>
+
+  <!-- ============ TERMINAL ============ -->
+  <rect x="60" y="60" width="600" height="120" rx="12" fill="#0D0221" stroke="#8B5CF6" stroke-opacity="0.4"/>
+  <circle cx="85" cy="85" r="6" fill="#EC4899"/>
+  <circle cx="105" cy="85" r="6" fill="#F0ABFC"/>
+  <circle cx="125" cy="85" r="6" fill="#8B5CF6"/>
+  <text x="80" y="130" class="mono" font-size="20" fill="#E9D5FF">
+    user@dev:~$ cat README.md
+    <animate attributeName="opacity" values="0;0;1" dur="0.1s" begin="0.3s" fill="freeze"/>
+  </text>
+  <rect x="80" y="140" width="12" height="22" fill="#F0ABFC">
+    <animate attributeName="opacity" values="1;0;1" dur="0.8s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- ============ NAME (script, vector-outline style font) ============ -->
+  <text x="60" y="260" class="script" font-size="72" fill="url(#nameGrad)">
+    Maiylsamy Durai
+    <animate attributeName="opacity" values="0;0;1" dur="0.1s" begin="1.6s" fill="freeze"/>
+  </text>
+
+  <!-- ============ CYCLING ROLE TITLES ============ -->
+  <g class="mono" font-size="26" fill="#C4B5FD">
+    <text x="60" y="305">
+      <animate attributeName="opacity" values="1;1;0;0" dur="6s" repeatCount="indefinite"/>
+      &gt; Software Engineer
+    </text>
+    <text x="60" y="305">
+      <animate attributeName="opacity" values="0;0;1;1;0;0" dur="6s" repeatCount="indefinite"/>
+      &gt; Python Backend Developer
+    </text>
+    <text x="60" y="305">
+      <animate attributeName="opacity" values="0;0;0;0;1;1" dur="6s" repeatCount="indefinite"/>
+      &gt; AI / LLM Automation Engineer
+    </text>
+  </g>
+
+  <!-- ============ TAGLINE QUOTE BOX ============ -->
+  <rect x="60" y="335" width="560" height="55" rx="10" fill="#3B1264" opacity="0.6"/>
+  <text x="80" y="370" class="sans" font-style="italic" font-size="20" fill="#F0ABFC">"Code. Automate. Innovate."</text>
+
+  <!-- ============ TECH PILLS ============ -->
+  <g class="mono" font-size="16">
+    <g class="pill p1"><rect x="60" y="410" width="90" height="34" rx="17" fill="#4C1D95"/><text x="105" y="432" text-anchor="middle" fill="#E9D5FF">Python</text></g>
+    <g class="pill p2"><rect x="160" y="410" width="100" height="34" rx="17" fill="#4C1D95"/><text x="210" y="432" text-anchor="middle" fill="#E9D5FF">FastAPI</text></g>
+    <g class="pill p3"><rect x="270" y="410" width="100" height="34" rx="17" fill="#4C1D95"/><text x="320" y="432" text-anchor="middle" fill="#E9D5FF">Selenium</text></g>
+    <g class="pill p4"><rect x="380" y="410" width="90" height="34" rx="17" fill="#4C1D95"/><text x="425" y="432" text-anchor="middle" fill="#E9D5FF">Appium</text></g>
+    <g class="pill p5"><rect x="480" y="410" width="80" height="34" rx="17" fill="#4C1D95"/><text x="520" y="432" text-anchor="middle" fill="#E9D5FF">Docker</text></g>
+    <g class="pill p6"><rect x="570" y="410" width="70" height="34" rx="17" fill="#4C1D95"/><text x="605" y="432" text-anchor="middle" fill="#E9D5FF">LLMs</text></g>
+  </g>
+
+  <!-- ============ ANIMATED STATS BAR ============ -->
+  <g class="p6">
+    <text x="60" y="480" class="mono" font-size="14" fill="#C4B5FD">Backend Proficiency</text>
+    <rect x="60" y="488" width="300" height="10" rx="5" fill="#2E0854"/>
+    <rect x="60" y="488" width="0" height="10" rx="5" fill="url(#nameGrad)">
+      <animate attributeName="width" from="0" to="255" dur="1.2s" begin="4s" fill="freeze"/>
+    </rect>
+
+    <text x="380" y="480" class="mono" font-size="14" fill="#C4B5FD">Automation & AI</text>
+    <rect x="380" y="488" width="220" height="10" rx="5" fill="#2E0854"/>
+    <rect x="380" y="488" width="0" height="10" rx="5" fill="url(#nameGrad)">
+      <animate attributeName="width" from="0" to="195" dur="1.2s" begin="4.2s" fill="freeze"/>
+    </rect>
+  </g>
+
+  <!-- ============ CODE EDITOR CARD ============ -->
+  <rect x="60" y="530" width="560" height="130" rx="12" fill="#0D0221" stroke="#8B5CF6" stroke-opacity="0.4"/>
+  <circle cx="85" cy="552" r="5" fill="#EC4899"/>
+  <circle cx="102" cy="552" r="5" fill="#F0ABFC"/>
+  <circle cx="119" cy="552" r="5" fill="#8B5CF6"/>
+  <text x="80" y="590" class="mono" font-size="15" fill="#F0ABFC">function <tspan fill="#E9D5FF">buildDreams</tspan>() {</text>
+  <text x="80" y="615" class="mono" font-size="15" fill="#C4B5FD">  return automate(python, ai, backend);</text>
+  <text x="80" y="640" class="mono" font-size="15" fill="#F0ABFC">}</text>
+
+  <!-- ============ NEON SIGN ============ -->
+  <text x="1090" y="330" text-anchor="middle" class="sans" font-size="22" font-weight="bold" fill="#F0ABFC">
+    KEEP CODING KEEP GROWING
+    <animate attributeName="opacity" values="1;1;0.3;1;1;0.2;1" dur="3s" repeatCount="indefinite"/>
+  </text>
+
+  <!-- hologram formation scan line -->
+  <rect x="0" y="0" width="1280" height="8" fill="#F0ABFC" opacity="0.7">
+    <animate attributeName="y" from="0" to="732" dur="1.6s" begin="0.2s" fill="freeze"/>
+    <animate attributeName="opacity" values="0.7;0" dur="0.3s" begin="1.7s" fill="freeze"/>
+  </rect>
+
+  <!-- continuous horizontal scanner -->
+  <rect x="0" y="0" width="1280" height="4" fill="#8B5CF6" opacity="0.5">
+    <animate attributeName="y" values="0;736;0" dur="3.5s" begin="2s" repeatCount="indefinite"/>
+  </rect>
+</g>
+</svg>
